@@ -13,22 +13,19 @@ public class Teachers<T1, T2, T3, T4> extends Persons<T1, T2, T3> {
 
     //METHODS
     @Override
-    public String toString() {
-        return super.toString() + "teaches at " + " faculty. " +
-                switch (SEX) {
-                    case MALE -> "He has ";
-                    case FEMALE -> "She has ";
-                    default -> throw new IllegalStateException("Unexpected value: " + SEX);
-                }
-                +
-                switch (DEGREE) {
-                    case MSC -> "Master of science degree in " + getSpecialization() + ". ";
-                    case PHD -> "PhD degree in " + getSpecialization() + ". ";
-                    case DSC -> "Doctor of science degree  in " + getSpecialization() + ". ";
-                    default -> throw new IllegalStateException("Unexpected value: " + DEGREE);
-                }
-                + '\n'
-                ;
+    public void print() {
+        super.print();
+        System.out.print("teaches at ");
+        System.out.print(getFaculty() + " faculty. ");
+        switch (SEX) {
+            case MALE: System.out.print("He has "); break;
+            case FEMALE: System.out.print("She has "); break;
+        }
+        switch (DEGREE) {
+            case MSC: System.out.print("Master of science degree in " + getSpecialization() + ". "); break;
+            case PHD: System.out.print("PhD degree in " + getSpecialization() + ". "); break;
+            case DSC: System.out.print("Doctor of science degree  in " + getSpecialization() + ". "); break;
+        }
     }
 
 

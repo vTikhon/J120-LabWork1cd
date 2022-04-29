@@ -14,20 +14,19 @@ public class Students<T1, T2, T3, T6> extends Persons<T1, T2, T3> {
 
     //METHODS
     @Override
-    public String toString() {
-        return super.toString() + "studies at " + getFaculty() + " faculty. " +
-                switch (SEX) {
-                    case MALE -> "He is ";
-                    case FEMALE -> "She is ";
-                    default -> throw new IllegalStateException("Unexpected value: " + SEX);
-                } + " year " +
-                switch (LEVEL) {
-                    case BACHELOR -> Consts.BACHELOR + "'s student. ";
-                    case MASTER -> Consts.MASTER + "student. ";
-                    default -> throw new IllegalStateException("Unexpected value: " + LEVEL);
-                }
-                + '\n'
-                ;
+    public void print() {
+        super.print();
+        System.out.print("studies at ");
+        System.out.print(getFaculty() + " faculty. ");
+        switch (SEX) {
+            case MALE: System.out.print("He is "); break;
+            case FEMALE: System.out.print("She is "); break;
+        }
+        System.out.print(getCourseNumber() + " year ");
+        switch (LEVEL) {
+            case BACHELOR: System.out.print(Consts.BACHELOR + "'s student. "); break;
+            case MASTER: System.out.print(Consts.MASTER + "student. "); break;
+        }
     }
 
     //GETTERS AND SETTERS

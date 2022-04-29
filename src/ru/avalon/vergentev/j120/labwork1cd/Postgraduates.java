@@ -11,15 +11,15 @@ public class Postgraduates<T1, T2, T3, T5> extends Persons<T1, T2, T3> {
 
     //METHODS
     @Override
-    public String toString() {
-        return super.toString() + "studies at " + " faculty. " +
-                switch (SEX) {
-                    case MALE -> "His ";
-                    case FEMALE -> "Her ";
-                    default -> throw new IllegalStateException("Unexpected value: " + SEX);
-                }
-                + "thesis title is " + getDissertationTitle() + ". " + '\n'
-                ;
+    public void print() {
+        super.print();
+        System.out.print("studies at ");
+        System.out.print(getFaculty() + " faculty. ");
+        switch (SEX) {
+            case MALE: System.out.print("His "); break;
+            case FEMALE: System.out.print("Her "); break;
+        }
+        System.out.print("thesis title is " + getDissertationTitle() + ". ");
     }
 
     //GETTERS AND SETTERS

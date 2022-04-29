@@ -11,6 +11,8 @@ public class Main {
         persons.add(new Students("Cunningham", "Anna", Consts.FEMALE,"World Economy", Consts.BACHELOR, 1));
         persons.add(new Students("Lundqvist", "Jill", Consts.FEMALE,"Jurisprudence", Consts.BACHELOR, 1));
         persons.add(new Postgraduates("Correa", "Ronald", Consts.MALE,"Computer science", "Design of a functional programming language"));
-        System.out.println(persons);
+
+        Persons.printAll((HashSet<? extends Persons>) persons);
+
     }
 }

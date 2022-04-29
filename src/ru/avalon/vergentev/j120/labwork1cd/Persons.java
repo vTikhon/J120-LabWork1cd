@@ -1,5 +1,8 @@
 package ru.avalon.vergentev.j120.labwork1cd;
 
+import java.util.HashSet;
+import java.util.Iterator;
+
 public class Persons<T1, T2, T3> {
     private T1 surname;
     private T2 name;
@@ -15,17 +18,20 @@ public class Persons<T1, T2, T3> {
     }
 
     //METHODS
-    @Override
-    public String toString() {
-        return "This is " + surname + " " + name + ". "
-                +
-                switch (SEX) {
-                    case MALE -> "He ";
-                    case FEMALE -> "She ";
-                    default -> throw new IllegalStateException("Unexpected value: " + SEX);
-                }
-                ;
+    public void print () {
+        System.out.println('\n');
+        System.out.print("This is " + getSurname() + " " + getName() + ". ");
+        switch (SEX) {
+            case MALE: System.out.print("He "); break;
+            case FEMALE: System.out.print("She "); break;
+        }
     }
+
+    public static void printAll (HashSet <? extends Persons> hashSet) {
+        hashSet.forEach(Persons::print);
+    }
+
+
 
 
     //GETTERS AND SETTERS
