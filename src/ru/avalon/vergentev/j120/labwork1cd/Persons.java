@@ -3,14 +3,14 @@ package ru.avalon.vergentev.j120.labwork1cd;
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class Persons<T1, T2, T3> {
-    private T1 surname;
-    private T2 name;
-    private T3 faculty;
+public class Persons {
+    private String surname;
+    private String name;
+    private String faculty;
     Consts SEX;
 
     //CONSTRUCTORS
-    public Persons(T1 surname, T2 name, Consts SEX, T3 faculty) {
+    public Persons(String surname, String name, Consts SEX, String faculty) {
         setSurname(surname);
         setName(name);
         this.SEX = SEX;
@@ -35,27 +35,27 @@ public class Persons<T1, T2, T3> {
 
 
     //GETTERS AND SETTERS
-    public T1 getSurname() {
+    public String getSurname() {
         return surname;
     }
 
-    public void setSurname(T1 surname) {
+    public void setSurname(String surname) {
         this.surname = surname;
     }
 
-    public T2 getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(T2 name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public T3 getFaculty() {
+    public String getFaculty() {
         return faculty;
     }
 
-    public void setFaculty(T3 faculty) {
+    public void setFaculty(String faculty) {
         this.faculty = faculty;
     }
 

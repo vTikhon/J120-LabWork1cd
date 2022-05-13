@@ -1,11 +1,11 @@
 package ru.avalon.vergentev.j120.labwork1cd;
 
-public class Students<T1, T2, T3, T6> extends Persons<T1, T2, T3> {
+public class Students extends Persons {
     Consts LEVEL;
-    private T6 courseNumber;
+    private int courseNumber;
 
     //CONSTRUCTORS
-    public Students(T1 surname, T2 name, Consts SEX, T3 faculty, Consts LEVEL, T6 courseNumber) {
+    public Students(String surname, String name, Consts SEX, String faculty, Consts LEVEL, int courseNumber) {
         super(surname, name, SEX, faculty);
         this.LEVEL = LEVEL;
         setCourseNumber(courseNumber);
@@ -30,12 +30,12 @@ public class Students<T1, T2, T3, T6> extends Persons<T1, T2, T3> {
     }
 
     //GETTERS AND SETTERS
-    public T6 getCourseNumber() {
+    public int getCourseNumber() {
         return courseNumber;
     }
 
-    public void setCourseNumber(T6 courseNumber) {
-        if ((int)courseNumber < 1){
+    public void setCourseNumber(int courseNumber) {
+        if (courseNumber < 1){
             throw new IllegalArgumentException("Number of course can't less than one");
         }
         this.courseNumber = courseNumber;

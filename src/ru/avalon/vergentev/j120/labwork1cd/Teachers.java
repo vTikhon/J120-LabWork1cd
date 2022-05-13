@@ -1,11 +1,11 @@
 package ru.avalon.vergentev.j120.labwork1cd;
 
-public class Teachers<T1, T2, T3, T4> extends Persons<T1, T2, T3> {
+public class Teachers extends Persons {
     Consts DEGREE;
-    private T4 specialization;
+    private String specialization;
 
     //CONSTRUCTORS
-    public Teachers(T1 surname, T2 name, Consts SEX, T3 faculty, Consts DEGREE, T4 specialization) {
+    public Teachers(String surname, String name, Consts SEX, String faculty, Consts DEGREE, String specialization) {
         super(surname, name, SEX, faculty);
         this.DEGREE = DEGREE;
         setSpecialization(specialization);
@@ -30,11 +30,11 @@ public class Teachers<T1, T2, T3, T4> extends Persons<T1, T2, T3> {
 
 
     //GETTERS AND SETTERS
-    public T4 getSpecialization() {
+    public String getSpecialization() {
         return specialization;
     }
 
-    public void setSpecialization(T4 specialization) {
+    public void setSpecialization(String specialization) {
         this.specialization = specialization;
     }
 }

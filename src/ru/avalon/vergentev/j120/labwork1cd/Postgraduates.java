@@ -1,10 +1,10 @@
 package ru.avalon.vergentev.j120.labwork1cd;
 
-public class Postgraduates<T1, T2, T3, T5> extends Persons<T1, T2, T3> {
-    private T5 dissertationTitle;
+public class Postgraduates extends Persons {
+    private String dissertationTitle;
 
     //CONSTRUCTORS
-    public Postgraduates(T1 surname, T2 name, Consts SEX, T3 faculty, T5 dissertationTitle) {
+    public Postgraduates(String surname, String name, Consts SEX, String faculty, String dissertationTitle) {
         super(surname, name, SEX, faculty);
         setDissertationTitle(dissertationTitle);
     }
@@ -23,11 +23,11 @@ public class Postgraduates<T1, T2, T3, T5> extends Persons<T1, T2, T3> {
     }
 
     //GETTERS AND SETTERS
-    public T5 getDissertationTitle() {
+    public String getDissertationTitle() {
         return dissertationTitle;
     }
 
-    public void setDissertationTitle(T5 dissertationTitle) {
+    public void setDissertationTitle(String dissertationTitle) {
         this.dissertationTitle = dissertationTitle;
     }
 }
