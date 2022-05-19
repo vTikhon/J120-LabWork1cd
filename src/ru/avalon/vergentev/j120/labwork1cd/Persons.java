@@ -1,9 +1,8 @@
 package ru.avalon.vergentev.j120.labwork1cd;
-
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
 
 public class Persons {
+    static Set<Persons> personsSet = new HashSet<>();
     private String surname;
     private String name;
     private String faculty;
@@ -29,6 +28,10 @@ public class Persons {
 
     public static void printAll (HashSet <? extends Persons> hashSet) {
         hashSet.forEach(Persons::print);
+    }
+
+    public static void insertParameters (HashSet <? extends Persons> hashSet) {
+        personsSet.addAll(hashSet);
     }
 
 

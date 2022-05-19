@@ -1,6 +1,8 @@
 package ru.avalon.vergentev.j120.labwork1cd;
+import java.util.*;
 
 public class Students extends Persons {
+    static Set<Students> studentsSet = new HashSet<>();
     Consts LEVEL;
     private int courseNumber;
 
@@ -27,6 +29,10 @@ public class Students extends Persons {
             case BACHELOR: System.out.print(Consts.BACHELOR + "'s student. "); break;
             case MASTER: System.out.print(Consts.MASTER + "student. "); break;
         }
+    }
+
+    public static void insertParameters (Students students) {
+        studentsSet.add(students);
     }
 
     //GETTERS AND SETTERS

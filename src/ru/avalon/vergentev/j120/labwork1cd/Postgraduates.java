@@ -1,6 +1,8 @@
 package ru.avalon.vergentev.j120.labwork1cd;
+import java.util.*;
 
 public class Postgraduates extends Persons {
+    static Set<Postgraduates> postgraduatesSet = new HashSet<>();
     private String dissertationTitle;
 
     //CONSTRUCTORS
@@ -20,6 +22,10 @@ public class Postgraduates extends Persons {
             case FEMALE: System.out.print("Her "); break;
         }
         System.out.print("thesis title is " + getDissertationTitle() + ". ");
+    }
+
+    public static void insertParameters (Postgraduates postgraduates) {
+        postgraduatesSet.add(postgraduates);
     }
 
     //GETTERS AND SETTERS
