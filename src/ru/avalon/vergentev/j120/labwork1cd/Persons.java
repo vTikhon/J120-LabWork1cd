@@ -30,12 +30,9 @@ public class Persons {
         hashSet.forEach(Persons::print);
     }
 
-    public static void insertParameters (HashSet <? extends Persons> hashSet) {
+    public static void addAll (HashSet <? extends Persons> hashSet) {
         personsSet.addAll(hashSet);
     }
-
-
-
 
     //GETTERS AND SETTERS
     public String getSurname() {

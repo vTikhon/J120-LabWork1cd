@@ -31,7 +31,7 @@ public class Students extends Persons {
         }
     }
 
-    public static void insertParameters (Students students) {
+    public static void add (Students students) {
         studentsSet.add(students);
     }
 

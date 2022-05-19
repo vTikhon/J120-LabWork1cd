@@ -30,7 +30,7 @@ public class Teachers extends Persons {
         }
     }
 
-    public static void insertParameters (Teachers teachers) {
+    public static void add (Teachers teachers) {
         teachersSet.add(teachers);
     }
 

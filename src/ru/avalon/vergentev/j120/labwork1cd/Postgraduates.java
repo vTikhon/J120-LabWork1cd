@@ -24,7 +24,7 @@ public class Postgraduates extends Persons {
         System.out.print("thesis title is " + getDissertationTitle() + ". ");
     }
 
-    public static void insertParameters (Postgraduates postgraduates) {
+    public static void add (Postgraduates postgraduates) {
         postgraduatesSet.add(postgraduates);
     }
 
