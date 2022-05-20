@@ -24,17 +24,16 @@ public class Postgraduates extends Persons {
         System.out.print("thesis title is " + getDissertationTitle() + ". ");
     }
 
-    public static void add (Postgraduates postgraduates) {
-        postgraduatesSet.add(postgraduates);
+    public static void addAll (HashSet <? super Postgraduates> hashSet) {
+        postgraduatesSet.add(hashSet);
+    }
+
+    public static void printPostgraduates (HashSet <? super Postgraduates> hashSet) {
+        hashSet.forEach(Persons::print);
     }
 
     //GETTERS AND SETTERS
-    public String getDissertationTitle() {
-        return dissertationTitle;
-    }
-
-    public void setDissertationTitle(String dissertationTitle) {
-        this.dissertationTitle = dissertationTitle;
-    }
+    public String getDissertationTitle() {return dissertationTitle;}
+    public void setDissertationTitle(String dissertationTitle) {this.dissertationTitle = dissertationTitle;}
 }
 

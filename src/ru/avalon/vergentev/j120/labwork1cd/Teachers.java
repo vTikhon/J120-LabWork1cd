@@ -30,18 +30,16 @@ public class Teachers extends Persons {
         }
     }
 
-    public static void add (Teachers teachers) {
-        teachersSet.add(teachers);
+    public static void addAll (HashSet <? super Teachers> hashSet) {
+        teachersSet.add(hashSet);
     }
 
+    public static void printTeachers (HashSet <? super Teachers> hashSet) {
+        hashSet.forEach(Persons::print);
+    }
 
     //GETTERS AND SETTERS
-    public String getSpecialization() {
-        return specialization;
-    }
-
-    public void setSpecialization(String specialization) {
-        this.specialization = specialization;
-    }
+    public String getSpecialization() {return specialization;}
+    public void setSpecialization(String specialization) {this.specialization = specialization;}
 }
 

@@ -1,14 +1,9 @@
 package ru.avalon.vergentev.j120.labwork1cd;
 import java.util.*;
 
-import static ru.avalon.vergentev.j120.labwork1cd.Persons.personsSet;
-import static ru.avalon.vergentev.j120.labwork1cd.Postgraduates.postgraduatesSet;
-import static ru.avalon.vergentev.j120.labwork1cd.Students.studentsSet;
-import static ru.avalon.vergentev.j120.labwork1cd.Teachers.teachersSet;
-
 public class Main {
     public static void main(String[] args) {
-        //>>>>>>>>>>>>>>>>>>>>>>>>>>>>TASK 3 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        //>>>>>>>>>>>>>>>>>>>>>>>>>>>>TASK 3 (правило HashSet<? extends Persons>) <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         //создаём первую коллекцию (наследника от Persons)
         Set<Teachers> teachers = new HashSet<>();
         teachers.add(new Teachers("Turner", "Ronald", Consts.MALE,"Computer science", Consts.PHD, "Programming paradigms"));
@@ -35,21 +30,26 @@ public class Main {
 
 
         System.out.println("\n--------------------------------------------------------------------------------");
-        //>>>>>>>>>>>>>>>>>>>>>>>>>>>>TASK 4 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-        Teachers.add(new Teachers("Turner", "Ronald", Consts.MALE,"Computer science", Consts.PHD, "Programming paradigms"));
-        Teachers.add(new Teachers("Hollings", "Ruth", Consts.FEMALE,"Jurisprudence", Consts.MSC, "Domestic arbitration"));
+        //>>>>>>>>>>>>>>>>>>>>>>>>>>>>TASK 4  (правило HashSet<? super Students>) <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        //создаём коллекцию Persons в которую помещаем все объекты наследников
+        Set<Persons> personsSet = new HashSet<>();
+        personsSet.add(new Teachers("Turner", "Ronald", Consts.MALE,"Computer science", Consts.PHD, "Programming paradigms"));
+        personsSet.add(new Teachers("Hollings", "Ruth", Consts.FEMALE,"Jurisprudence", Consts.MSC, "Domestic arbitration"));
+        personsSet.add(new Students("Wilkinson", "Leo", Consts.MALE,"Computer science", Consts.BACHELOR, 3));
+        personsSet.add(new Students("Cunningham", "Anna", Consts.FEMALE,"World Economy", Consts.BACHELOR, 1));
+        personsSet.add(new Students("Lundqvist", "Jill", Consts.FEMALE,"Jurisprudence", Consts.BACHELOR, 1));
+        personsSet.add(new Postgraduates("Correa", "Ronald", Consts.MALE,"Computer science", "Design of a functional programming language"));
 
-        Students.add(new Students("Wilkinson", "Leo", Consts.MALE,"Computer science", Consts.BACHELOR, 3));
-        Students.add(new Students("Cunningham", "Anna", Consts.FEMALE,"World Economy", Consts.BACHELOR, 1));
-        Students.add(new Students("Lundqvist", "Jill", Consts.FEMALE,"Jurisprudence", Consts.BACHELOR, 1));
+        //добавляем в коллекцию studentsSet - студентов из Persons
+        Students.addAll((HashSet<? super Students>) personsSet);
+        //добавляем в коллекцию teachersSet - учителей из Persons
+        Teachers.addAll((HashSet<? super Teachers>) personsSet);
+        //добавляем в коллекцию postgraduatesSet - аспирантов из Persons
+        Postgraduates.addAll((HashSet<? super Postgraduates>) personsSet);
 
-        Postgraduates.add(new Postgraduates("Correa", "Ronald", Consts.MALE,"Computer science", "Design of a functional programming language"));
-
-        Persons.addAll((HashSet<? extends Persons>) teachersSet);
-        Persons.addAll((HashSet<? extends Persons>) studentsSet);
-        Persons.addAll((HashSet<? extends Persons>) postgraduatesSet);
-
-        //выводим методом printAll 
-        Persons.printAll((HashSet<? extends Persons>) personsSet);
+        //выводим информацию о каждой коллекции в коллекции
+        Students.printStudents((HashSet<? super Students>) personsSet);
+        Teachers.printTeachers((HashSet<? super Teachers>) personsSet);
+        Postgraduates.printPostgraduates((HashSet<? super Postgraduates>) personsSet);
     }
 }

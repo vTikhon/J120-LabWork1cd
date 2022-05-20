@@ -31,21 +31,21 @@ public class Students extends Persons {
         }
     }
 
-    public static void add (Students students) {
-        studentsSet.add(students);
+    public static void addAll (HashSet <? super Students> hashSet) {
+        studentsSet.addAll(hashSet);
+    }
+
+    public static void printStudents (HashSet <? super Students> hashSet) {
+        hashSet.forEach(Persons::print);
     }
 
     //GETTERS AND SETTERS
-    public int getCourseNumber() {
-        return courseNumber;
-    }
-
+    public int getCourseNumber() {return courseNumber;}
     public void setCourseNumber(int courseNumber) {
         if (courseNumber < 1){
             throw new IllegalArgumentException("Number of course can't less than one");
         }
         this.courseNumber = courseNumber;
     }
-
 }
 

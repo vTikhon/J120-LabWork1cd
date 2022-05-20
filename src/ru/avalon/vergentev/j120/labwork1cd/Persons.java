@@ -30,34 +30,12 @@ public class Persons {
         hashSet.forEach(Persons::print);
     }
 
-    public static void addAll (HashSet <? extends Persons> hashSet) {
-        personsSet.addAll(hashSet);
-    }
-
     //GETTERS AND SETTERS
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getFaculty() {
-        return faculty;
-    }
-
-    public void setFaculty(String faculty) {
-        this.faculty = faculty;
-    }
-
+    public String getSurname() {return surname;}
+    public void setSurname(String surname) {this.surname = surname;}
+    public String getName() {return name;}
+    public void setName(String name) {this.name = name;}
+    public String getFaculty() {return faculty;}
+    public void setFaculty(String faculty) {this.faculty = faculty;}
 }
 
