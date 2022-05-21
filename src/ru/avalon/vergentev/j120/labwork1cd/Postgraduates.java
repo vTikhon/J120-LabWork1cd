@@ -21,15 +21,13 @@ public class Postgraduates extends Persons {
             case MALE: System.out.print("His "); break;
             case FEMALE: System.out.print("Her "); break;
         }
-        System.out.print("thesis title is " + getDissertationTitle() + ". ");
+        System.out.print("thesis title is " + dissertationTitle + ". ");
     }
 
     public static void addAll (HashSet <? super Postgraduates> hashSet) {
-        postgraduatesSet.add(hashSet);
-    }
-
-    public static void printPostgraduates (HashSet <? super Postgraduates> hashSet) {
-        hashSet.forEach(Persons::print);
+        for (Object object : hashSet) {
+            if (object instanceof Postgraduates) postgraduatesSet.add((Postgraduates) object);
+        }
     }
 
     //GETTERS AND SETTERS

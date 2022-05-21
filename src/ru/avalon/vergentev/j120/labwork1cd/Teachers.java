@@ -24,18 +24,16 @@ public class Teachers extends Persons {
             case FEMALE: System.out.print("She has "); break;
         }
         switch (DEGREE) {
-            case MSC: System.out.print("Master of science degree in " + getSpecialization() + ". "); break;
-            case PHD: System.out.print("PhD degree in " + getSpecialization() + ". "); break;
-            case DSC: System.out.print("Doctor of science degree  in " + getSpecialization() + ". "); break;
+            case MSC: System.out.print("Master of science degree in " + specialization + ". "); break;
+            case PHD: System.out.print("PhD degree in " + specialization + ". "); break;
+            case DSC: System.out.print("Doctor of science degree  in " + specialization + ". "); break;
         }
     }
 
     public static void addAll (HashSet <? super Teachers> hashSet) {
-        teachersSet.add(hashSet);
-    }
-
-    public static void printTeachers (HashSet <? super Teachers> hashSet) {
-        hashSet.forEach(Persons::print);
+        for (Object object : hashSet) {
+            if (object instanceof Teachers) teachersSet.add((Teachers) object);
+        }
     }
 
     //GETTERS AND SETTERS

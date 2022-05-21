@@ -24,7 +24,7 @@ public class Students extends Persons {
             case MALE: System.out.print("He is "); break;
             case FEMALE: System.out.print("She is "); break;
         }
-        System.out.print(getCourseNumber() + " year ");
+        System.out.print(courseNumber + " year ");
         switch (LEVEL) {
             case BACHELOR: System.out.print(Consts.BACHELOR + "'s student. "); break;
             case MASTER: System.out.print(Consts.MASTER + "student. "); break;
@@ -32,11 +32,9 @@ public class Students extends Persons {
     }
 
     public static void addAll (HashSet <? super Students> hashSet) {
-        studentsSet.addAll(hashSet);
-    }
-
-    public static void printStudents (HashSet <? super Students> hashSet) {
-        hashSet.forEach(Persons::print);
+        for (Object object : hashSet) {
+            if (object instanceof Students) studentsSet.add((Students) object);
+        }
     }
 
     //GETTERS AND SETTERS

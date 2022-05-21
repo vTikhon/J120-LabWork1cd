@@ -4,11 +4,6 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         //>>>>>>>>>>>>>>>>>>>>>>>>>>>>TASK 3 (правило HashSet<? extends Persons>) <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-        //создаём первую коллекцию (наследника от Persons)
-        Set<Teachers> teachers = new HashSet<>();
-        teachers.add(new Teachers("Turner", "Ronald", Consts.MALE,"Computer science", Consts.PHD, "Programming paradigms"));
-        teachers.add(new Teachers("Hollings", "Ruth", Consts.FEMALE,"Jurisprudence", Consts.MSC, "Domestic arbitration"));
-
         //создаём вторую коллекцию (наследника от Persons)
         Set<Students> students = new HashSet<>();
         students.add(new Students("Wilkinson", "Leo", Consts.MALE,"Computer science", Consts.BACHELOR, 3));
@@ -18,6 +13,11 @@ public class Main {
         //создаём третью коллекцию (наследника от Persons)
         Set<Postgraduates> postgraduates = new HashSet<>();
         postgraduates.add(new Postgraduates("Correa", "Ronald", Consts.MALE,"Computer science", "Design of a functional programming language"));
+
+        //создаём первую коллекцию (наследника от Persons)
+        Set<Teachers> teachers = new HashSet<>();
+        teachers.add(new Teachers("Turner", "Ronald", Consts.MALE,"Computer science", Consts.PHD, "Programming paradigms"));
+        teachers.add(new Teachers("Hollings", "Ruth", Consts.FEMALE,"Jurisprudence", Consts.MSC, "Domestic arbitration"));
 
         //создаём коллекцию принимающую коллекции наследников
         Set<Persons> persons = new HashSet<>();
@@ -42,14 +42,14 @@ public class Main {
 
         //добавляем в коллекцию studentsSet - студентов из Persons
         Students.addAll((HashSet<? super Students>) personsSet);
-        //добавляем в коллекцию teachersSet - учителей из Persons
-        Teachers.addAll((HashSet<? super Teachers>) personsSet);
         //добавляем в коллекцию postgraduatesSet - аспирантов из Persons
         Postgraduates.addAll((HashSet<? super Postgraduates>) personsSet);
+        //добавляем в коллекцию teachersSet - учителей из Persons
+        Teachers.addAll((HashSet<? super Teachers>) personsSet);
 
-        //выводим информацию о каждой коллекции в коллекции
-        Students.printStudents((HashSet<? super Students>) personsSet);
-        Teachers.printTeachers((HashSet<? super Teachers>) personsSet);
-        Postgraduates.printPostgraduates((HashSet<? super Postgraduates>) personsSet);
+        //проверяем информацию о каждой коллекции в коллекции
+        Persons.printAll((HashSet<? extends Persons>) Students.studentsSet);
+        Persons.printAll((HashSet<? extends Persons>) Postgraduates.postgraduatesSet);
+        Persons.printAll((HashSet<? extends Persons>) Teachers.teachersSet);
     }
 }
