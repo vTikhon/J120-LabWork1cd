@@ -1,8 +1,6 @@
 package ru.avalon.vergentev.j120.labwork1cd;
-import java.util.*;
 
 public class Teachers extends Persons {
-    static Set<Teachers> teachersSet = new HashSet<>();
     Consts DEGREE;
     private String specialization;
 
@@ -27,12 +25,6 @@ public class Teachers extends Persons {
             case MSC: System.out.print("Master of science degree in " + specialization + ". "); break;
             case PHD: System.out.print("PhD degree in " + specialization + ". "); break;
             case DSC: System.out.print("Doctor of science degree  in " + specialization + ". "); break;
-        }
-    }
-
-    public static void addAll (Set <? super Teachers> set) {
-        for (Object object : set) {
-            if (object instanceof Teachers) teachersSet.add((Teachers) object);
         }
     }
 

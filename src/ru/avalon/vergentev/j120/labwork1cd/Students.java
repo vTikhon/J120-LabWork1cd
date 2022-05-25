@@ -2,7 +2,6 @@ package ru.avalon.vergentev.j120.labwork1cd;
 import java.util.*;
 
 public class Students extends Persons {
-    static Set<Students> studentsSet = new HashSet<>();
     Consts LEVEL;
     private int courseNumber;
 
@@ -31,9 +30,9 @@ public class Students extends Persons {
         }
     }
 
-    public static void addAll (Set <? super Students> set) {
+    public static <T> void addAll (Set <? super T> set) {
         for (Object object : set) {
-            if (object instanceof Students) studentsSet.add((Students) object);
+            if (object instanceof Persons) Persons.personSet.add((Persons) object);
         }
     }
 

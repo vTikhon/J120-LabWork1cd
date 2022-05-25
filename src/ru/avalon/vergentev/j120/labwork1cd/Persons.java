@@ -2,6 +2,7 @@ package ru.avalon.vergentev.j120.labwork1cd;
 import java.util.*;
 
 public class Persons {
+    static Set<Persons> personSet = new HashSet<>();
     private String surname;
     private String name;
     private String faculty;
