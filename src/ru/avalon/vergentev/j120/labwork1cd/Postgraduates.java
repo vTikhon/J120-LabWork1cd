@@ -24,8 +24,8 @@ public class Postgraduates extends Persons {
         System.out.print("thesis title is " + dissertationTitle + ". ");
     }
 
-    public static void addAll (HashSet <? super Postgraduates> hashSet) {
-        for (Object object : hashSet) {
+    public static void addAll (Set <? super Postgraduates> set) {
+        for (Object object : set) {
             if (object instanceof Postgraduates) postgraduatesSet.add((Postgraduates) object);
         }
     }

@@ -26,7 +26,7 @@ public class Main {
         persons.addAll(postgraduates);
 
         //выводим методом printAll сведения коллекции, которая приняла коллекции наследников
-        Persons.printAll((HashSet<? extends Persons>) persons);
+        Persons.printAll(persons);
 
 
         System.out.println("\n--------------------------------------------------------------------------------");
@@ -41,15 +41,15 @@ public class Main {
         personsSet.add(new Postgraduates("Correa", "Ronald", Consts.MALE,"Computer science", "Design of a functional programming language"));
 
         //добавляем в коллекцию studentsSet - студентов из Persons
-        Students.addAll((HashSet<? super Students>) personsSet);
+        Students.addAll(personsSet);
         //добавляем в коллекцию postgraduatesSet - аспирантов из Persons
-        Postgraduates.addAll((HashSet<? super Postgraduates>) personsSet);
+        Postgraduates.addAll(personsSet);
         //добавляем в коллекцию teachersSet - учителей из Persons
-        Teachers.addAll((HashSet<? super Teachers>) personsSet);
+        Teachers.addAll(personsSet);
 
         //проверяем информацию о каждой коллекции в коллекции
-        Persons.printAll((HashSet<? extends Persons>) Students.studentsSet);
-        Persons.printAll((HashSet<? extends Persons>) Postgraduates.postgraduatesSet);
-        Persons.printAll((HashSet<? extends Persons>) Teachers.teachersSet);
+        Persons.printAll(Students.studentsSet);
+        Persons.printAll(Postgraduates.postgraduatesSet);
+        Persons.printAll(Teachers.teachersSet);
     }
 }

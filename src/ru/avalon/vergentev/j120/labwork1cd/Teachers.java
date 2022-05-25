@@ -30,8 +30,8 @@ public class Teachers extends Persons {
         }
     }
 
-    public static void addAll (HashSet <? super Teachers> hashSet) {
-        for (Object object : hashSet) {
+    public static void addAll (Set <? super Teachers> set) {
+        for (Object object : set) {
             if (object instanceof Teachers) teachersSet.add((Teachers) object);
         }
     }

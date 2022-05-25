@@ -31,8 +31,8 @@ public class Students extends Persons {
         }
     }
 
-    public static void addAll (HashSet <? super Students> hashSet) {
-        for (Object object : hashSet) {
+    public static void addAll (Set <? super Students> set) {
+        for (Object object : set) {
             if (object instanceof Students) studentsSet.add((Students) object);
         }
     }

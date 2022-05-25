@@ -25,8 +25,8 @@ public class Persons {
         }
     }
 
-    public static void printAll (HashSet <? extends Persons> hashSet) {
-        for (Persons persons : hashSet) {
+    public static void printAll (Set <? extends Persons> set) {
+        for (Persons persons : set) {
             persons.print();
         }
     }
